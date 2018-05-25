@@ -1,0 +1,15 @@
+<div class= "col-sm-6 col-sm-offset-3">
+  <h1><%= "#{ @cocktail.new_record?() ? 'Add a new cocktail' : "Edit the cocktail: #{@cocktail.name}" }" %></h1>
+  <div class="container col-sm-12">
+    <%= simple_form_for(@cocktail) do |f| %>
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: "form-control" %>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache, as: :hidden %>
+      </div>
+      <%= link_to "Back", "#{ @cocktail.new_record?() ? cocktails_path : cocktail_path }", class: "btn btn-warning" %>
+      <%= f.submit class: "btn btn-success" %>
+    <% end %>
+  </div>
+</div>

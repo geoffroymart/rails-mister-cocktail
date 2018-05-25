@@ -1,0 +1,25 @@
+<div>
+  <h1>List of Cocktails</h1>
+  <div class= "content">
+    <ul>
+      <% @cocktails.each do |cocktail| %>
+        <div>
+            <li><%= link_to cocktail.name, "/cocktails/#{cocktail.id}" %></li>
+        </div>
+      <% end %>
+    </ul>
+    <%= link_to "Add cocktail", new_cocktail_path, class: "btn btn-primary" %>
+  </div>
+</div>
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fa fa-github"></i></a>
+    <a href="#"><i class="fa fa-instagram"></i></a>
+    <a href="#"><i class="fa fa-facebook"></i></a>
+    <a href="#"><i class="fa fa-twitter"></i></a>
+    <a href="#"><i class="fa fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    This footer is made with <i class="fa fa-heart"></i> at Le Wagon
+  </div>
+</div>
