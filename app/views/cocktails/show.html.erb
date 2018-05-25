@@ -1,6 +1,6 @@
 <div class="container-show col-sm-10 col-sm-offset-1">
   <div id="cocktail-image">
-    <% @cocktail.photo.blank? ? '' : cl_image_tag(@cocktail.photo, height: 400, width: 350, crop: :fill) %>
+    <%= @cocktail.photo.blank? ? '' : cl_image_tag(@cocktail.photo, height: 400, width: 350, crop: :fill) %>
   </div>
   <div id="cocktail-content">
     <h1><%= @cocktail.name %></h1>
