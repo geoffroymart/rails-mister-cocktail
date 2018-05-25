@@ -1,15 +1,16 @@
 <div class="big-container">
   <div id="header-index">
-    <h1>List of Cocktails</h1>
+    <h1>My cocktails</h1>
     <div id="button-cocktail">
-      <%= link_to "Add a new cocktail", new_cocktail_path, class: "btn btn-primary" %>
+      <%= link_to "Add a new cocktail", new_cocktail_path, class: "btn btn-primary hidden-xs" %>
     </div>
   </div>
   <div id="container-cards">
     <div class="row">
       <% @cocktails.each do |cocktail| %>
         <div class="col-xs-12 col-sm-4">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.1)), url('<%=cl_image_path cocktail.photo %>');">
+          <% url = cocktail.photo.blank? ? "/glass.png" : cl_image_path(cocktail.photo) %>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.1)), url('<%= url %>');">
             <div class="card-description">
               <h2><%= cocktail.name %></h2>
             </div>
