@@ -1,19 +1,23 @@
-<div class= "col-sm-6 col-sm-offset-3">
-  <h1><%= @cocktail.name %></h1>
-  <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
-  <h3>Doses</h3>
-  <div>
-    <ul>
-      <% @cocktail.doses.each do |dose| %>
-        <div>
-            <li><%= dose.description %></li>
-        </div>
-      <% end %>
-    </ul>
-    <%= link_to "+ Add dose", new_cocktail_dose_path(@cocktail.id) %>
+<div class="container-show col-sm-10 col-sm-offset-1">
+  <div id="cocktail-image">
+    <%= cl_image_tag @cocktail.photo, height: 400, width: 300, crop: :fill %>
   </div>
-  <br>
-  <div>
-    <%= link_to "Back to list", cocktails_path, class: "btn btn-warning" %>
+  <div id="cocktail-content">
+    <h1><%= @cocktail.name %></h1>
+    <h3>Doses</h3>
+    <div>
+      <ul>
+        <% @cocktail.doses.each do |dose| %>
+          <div>
+              <li><%= "#{dose.description} #{dose.ingredient[:name]}" %></li>
+          </div>
+        <% end %>
+      </ul>
+      <%= link_to "+ Add a dose", new_cocktail_dose_path(@cocktail.id) %>
+    </div>
+    <div id="buttons">
+      <%= link_to "Back to list", cocktails_path, class: "btn btn-warning" %>
+      <%= link_to "Delete", cocktail_path,  method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+    </div>
   </div>
 </div>

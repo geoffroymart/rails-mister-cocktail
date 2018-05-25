@@ -1,25 +1,22 @@
-<div class= "col-sm-6 col-sm-offset-3">
+<div class="big-container">
   <h1>List of Cocktails</h1>
-  <div class= "content">
-    <ul>
+<!--   <div class= "content"> -->
+  <div class="container">
+<!--     <ul> -->
       <% @cocktails.each do |cocktail| %>
-        <div>
-            <li><%= link_to cocktail.name, "/cocktails/#{cocktail.id}" %></li>
+        <div class="row">
+          <div class="col-xs-12 col-sm-4">
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('cl_image_path cocktail.photo');">
+              <div class="card-description">
+                <h2><%= link_to cocktail.name, "/cocktails/#{cocktail.id}" %></h2>
+              </div>
+              <a class="card-link" href="#" ></a>
+            </div>
+          </div>
         </div>
       <% end %>
-    </ul>
+<!--     </ul> -->
     <%= link_to "Add cocktail", new_cocktail_path, class: "btn btn-primary" %>
   </div>
-</div>
-<div class="footer">
-  <div class="footer-links">
-    <a href="#"><i class="fa fa-github"></i></a>
-    <a href="#"><i class="fa fa-instagram"></i></a>
-    <a href="#"><i class="fa fa-facebook"></i></a>
-    <a href="#"><i class="fa fa-twitter"></i></a>
-    <a href="#"><i class="fa fa-linkedin"></i></a>
-  </div>
-  <div class="footer-copyright">
-    This footer is made with <i class="fa fa-heart"></i> at Le Wagon
-  </div>
+<!--   </div> -->
 </div>
