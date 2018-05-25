@@ -4,4 +4,21 @@ a {
 
 .big-container {
   margin: 0 30px;
+  // position: absolute;
 }
+
+#header-index {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+#button-cocktail {
+  position: absolute;
+  right: 0;
+}
+
+#container-cards {
+  margin-top: 30px;
+}
+

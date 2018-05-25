@@ -1,6 +1,6 @@
 <div class="container-show col-sm-10 col-sm-offset-1">
   <div id="cocktail-image">
-    <%= cl_image_tag @cocktail.photo, height: 400, width: 300, crop: :fill %>
+    <%= cl_image_tag @cocktail.photo, height: 400, width: 350, crop: :fill %>
   </div>
   <div id="cocktail-content">
     <h1><%= @cocktail.name %></h1>
@@ -15,8 +15,10 @@
       </ul>
       <%= link_to "+ Add a dose", new_cocktail_dose_path(@cocktail.id) %>
     </div>
-    <div id="buttons">
+    <div id="button-back">
       <%= link_to "Back to list", cocktails_path, class: "btn btn-warning" %>
+    </div>
+    <div id="button-delete">
       <%= link_to "Delete", cocktail_path,  method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
     </div>
   </div>
